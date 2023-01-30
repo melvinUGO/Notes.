@@ -8,10 +8,10 @@ import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const [darkTheme, setDarkTheme] = useState(false);
-  const { user } = useGlobalContext();
   const navigate = useNavigate();
 
   useEffect(() => {
+    const user = JSON.parse(localStorage.getItem("userInfo"));
     if (!user) {
       navigate("/register");
     }
