@@ -26,8 +26,8 @@ const Login = () => {
         JSON.stringify({ name: data.user, token: data.token })
       );
       setRegistering(false);
-      console.log(response.status);
-      if (data || response.status == 201) {
+      console.log(data);
+      if (data) {
         navigate("/");
       }
     } catch (error) {
